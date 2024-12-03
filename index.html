@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veggente - The Fortune Teller</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #1a1a2e;
+            color: white;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+        .crystal-ball {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle at 30% 30%, #537895, #09203f);
+            border-radius: 50%;
+            margin: 20px auto;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        button:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Veggente</h1>
+        <div class="crystal-ball"></div>
+        <button onclick="tellFortune()">Tell me my fortune</button>
+        <p id="fortune"></p>
+    </div>
+
+    <script>
+        const fortunes = [
+            "A beautiful journey lies ahead.",
+            "Your creativity will lead to success.",
+            "A surprising friendship will blossom.",
+            "Good fortune will come to you in disguise.",
+            "Your patience will be rewarded."
+        ];
+
+        function tellFortune() {
+            const fortune = fortunes[Math.floor(Math.random() * fortunes.length)];
+            document.getElementById('fortune').textContent = fortune;
+        }
+    </script>
+</body>
+</html>
